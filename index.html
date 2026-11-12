@@ -162,7 +162,7 @@ function gTick(o){o.tl-=.1;o.pt-=100;
  if(o.p>=100)return gEnd(o,1);if(o.tl<=0)return gEnd(o,0);gUI(o)}
 function gUI(o){const q=s=>o.el.querySelector(s);q('.gp').textContent=Math.floor(o.p)+'%';q('.gb').style.width=o.p+'%';q('.gtm').textContent=Math.ceil(o.tl);
  const k=o.ph+o.hold+o.hit;if(k==o.k)return;o.k=k;const g=q('.gs');g.className='gs '+(o.ph=='ok'?'':o.ph);
- g.innerHTML=o.ph=='warn'?'팀장님 접근 중!<br>손을 떼세요':o.ph=='boss'?(o.hit?'들켰다! -25%<br>손을 떼세요':'업무 중인 척!<br>누르면 안 돼요'):`<i class="lg ${o.hold?'spin':''}" style=width:72px></i>${o.hold?'퇴근 준비 중…':'퇴근 준비'}`}
+ g.innerHTML=o.ph=='warn'?'팀장님 접근 중!<br>손을 떼세요':o.ph=='boss'?(o.hit?'들켰다! -25%<br>손을 떼세요':'업무 중인 척!<br>누르면 안 돼요'):`<i class="lg ${o.hold?'spin':''}" style=width:72px></i>${o.hold?'퇴근 준비 중…':'퇴근 준비 하기'}`}
 function gEnd(o,w){clearInterval(o.iv);o.run=0;const B='<div class=row><button class=o data-a=ok>확인</button><button class=o data-a=again>다시 하기</button></div>';setT(o,'game_result.exe');
  setB(o,w?`<p class=sys>[시스템 알림] 퇴근 로딩 100%</p><p class=name>퇴근 성공!</p><p>눈치 싸움에서 이겼어요. 오늘 하루도 수고 많았어요!</p><div class="box cheer"><b>보너스 buff</b>${BON[Math.random()*4|0]}</div>${B}`:`<p class=sys>[시스템 알림] 퇴근 로딩 중단</p><p class=name>야근 확정…</p><p>괜찮아요, 여기까지도 충분히 잘했어요. 다시 도전해 볼까요?</p><div class="box cheer"><b>오늘의 응원</b>내일은 꼭 칼퇴할 수 있을 거예요!</div>${B}`)}
 boot();bump();
