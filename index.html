@@ -132,7 +132,7 @@ function done(o){if(!W[o.id])return;if(o.t=='b'){o.r=judge(o.a);if(o.r==7){openW
 function show(o){const BTN='<div class="row"><button class="o" data-a="ok">확인</button><button class="o" data-a="again">다시 하기</button></div>';
  if(o.t=='b'){const r=RS[o.r];setT(o,'buff_result.exe');setB(o,`<p class="sys">[시스템 알림] 오늘의 buff가 감지되었습니다.</p><p class="name">${r[0]}</p><p>${r[1]}</p><p class="chips">${r[2].split(' / ').map(s=>`<span>${s}</span>`).join('')}</p><div class="box"><b>처방</b>${r[3]}</div><div class="box cheer"><b>오늘의 응원</b>${CH[o.r]}</div>${BTN}`)}
  else{const[x,y]=pick(o.a),[n,e]=NU[M.indexOf(x)],c=o.a[0];setT(o,'lunch_result.exe');
-  setB(o,`<p class="sys">[시스템 알림] 점심 메뉴가 도착했습니다.</p><p class="name">${x[0]}</p><p class="chips"><span>${x[1]}</span></p><div class="box cheer"><b>성분 분석</b>${x[0]}의 ${n}${I(n)} 너의 ${S[c]}${E(S[c])} 조절해줄 거야.<br>${CS[c]} 날에는 음식 성분 중 ${n}${E(n)} 먹으면 ${e}에 도움을 줄 수 있어.</div><p>이런 것도 있어요: ${y[0]}</p><p class="note">재미로 보는 영양 이야기예요.</p>${BTN}`)}
+  setB(o,`<p class="sys">[시스템 알림] 점심 메뉴가 도착했습니다.</p><p class="name">${x[0]}</p><p class="chips"><span>${x[1]}</span></p><div class="box cheer"><b>성분 분석</b>${x[0]}의 ${n}${I(n)} 너의 ${S[c]}${E(S[c])} 조절해줄 거야.<br>${CS[c]} 날에는 음식 성분 중 ${n}${E(n)} 먹으면 ${e}에 도움을 줄 수 있어.</div><p>이런 것도 있어요: ${y[0]}</p>${BTN}`)}
  D[o.t]=1}
 const acts={gs:o=>gStart(o),ok:o=>closeW(o.id),again:o=>{if(o.t=='g')return gStart(o);o.i=0;o.a=[];drawQ(o)},ch:()=>{closeW('err');if(W.b)show(W.b)}};
 function tk(){
