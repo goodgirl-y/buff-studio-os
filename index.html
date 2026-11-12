@@ -137,7 +137,7 @@ function show(o){const BTN='<div class="row"><button class="o" data-a="ok">확�
 const acts={gs:o=>gStart(o),ok:o=>closeW(o.id),again:o=>{if(o.t=='g')return gStart(o);o.i=0;o.a=[];drawQ(o)},ch:()=>{closeW('err');if(W.b)show(W.b)}};
 function tk(){
  if(D.b&&D.l&&!D.f){D.f=1;setTimeout(()=>openW('full','buff_full.exe',`<div class="c"><p class="big">buff 100% 충전 완료!</p><p>오늘의 힘이 모였어요. 뽑기 1회권이 도착했습니다.</p></div><div class="row"><button class="o" data-a="ok">확인</button></div>`),600)}}
-const IC=[['오늘의 BUFF','b',()=>startQ('b')],['LUNCH','l',()=>startQ('l')],['GAME 퇴근 로딩','w',openG],['ABOUT','a',()=>openW('a','about.txt',`<p class="big">FIND YOUR BUFF!</p><p>BUFF STUDIO는 반복되는 업무 사이에 소소한 리프레시를 더하는<br>데스크 라이프스타일 브랜드입니다.<br>일상적인 데스크 굿즈와 디지털 콘텐츠를 통해<br>잠깐의 재미와 기분 전환을 제공하며,<<br>평범한 업무 속에서 나만의 BUFF를 발견하는 경험을 제안합니다.</p>`)]];
+const IC=[['오늘의 BUFF','b',()=>startQ('b')],['LUNCH','l',()=>startQ('l')],['GAME 퇴근 로딩','w',openG],['ABOUT','a',()=>openW('a','about.txt',`<p class="big">FIND YOUR BUFF!</p><p>BUFF STUDIO는 반복되는 업무 사이에<br>소소한 리프레시를 더하는 데스크 라이프스타일 브랜드입니다.<br>일상적인 데스크 굿즈와 디지털 콘텐츠를 통해<br>잠깐의 재미와 기분 전환을 제공하며,<br>평범한 업무 속에서 나만의 BUFF를 발견하는 경험을 제안합니다.</p>`)]];
 IC.forEach(([n,k,f])=>{const d=document.createElement('div');d.className='i';d.innerHTML=`<div>${ICN[k]}</div>${n}`;d.onclick=f;$('#ic').append(d)});
 function boot(){Object.keys(W).forEach(closeW);D={b:0,l:0,f:0};tg();
  $('#desk').style.display='none';const b=$('#boot');b.style.display='flex';b.innerHTML=`<i class="lg spin" style="width:150px"></i><h1>Buff Studio</h1><p id="bp"></p>`;let p=0;
